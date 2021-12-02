@@ -1,6 +1,3 @@
-from os import closerange
-
-
 f = open('input.txt')
 inputlist = f.read().splitlines()
 f.close()
