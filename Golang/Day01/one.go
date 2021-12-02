@@ -23,18 +23,18 @@ func main() {
 	inputlastindex := len(inputarr) - 2
 	fmt.Println("Question 1a:", getIncreaseCount(inputarr, inputlastindex))
 
-	var sumarr []int
-	sumlastindex := len(inputarr) - 3
-	for n := 0; n <= sumlastindex; n++ {
-		sumarr = append(sumarr, inputarr[n]+inputarr[n+1]+inputarr[n+2])
+	var slidingwindow []int
+	slidinglastindex := len(inputarr) - 3
+	for n := 0; n <= slidinglastindex; n++ {
+		slidingwindow = append(slidingwindow, inputarr[n]+inputarr[n+1]+inputarr[n+2])
 	}
-	fmt.Println("Question 1b:", getIncreaseCount(sumarr, len(sumarr)-2))
+	fmt.Println("Question 1b:", getIncreaseCount(slidingwindow, len(slidingwindow)-2))
 }
 
-func getIncreaseCount(inputarr []int, lastindex int) int {
+func getIncreaseCount(input []int, lastindex int) int {
 	incCount := 0
 	for n := 0; n <= lastindex; n++ {
-		if inputarr[n] < inputarr[n+1] {
+		if input[n] < input[n+1] {
 			incCount++
 		}
 	}
