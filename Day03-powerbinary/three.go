@@ -19,7 +19,14 @@ func main() {
 	for scanner.Scan() {
 		inputdata = append(inputdata, scanner.Text())
 	}
+
+	fmt.Println(powerconsumption(inputdata))
+	fmt.Println(lifesupportrating(inputdata))
+}
+
+func powerconsumption(inputdata []string) int64 {
 	var binarycounts [12]int
+	var g, e string
 	for n := 0; n < len(inputdata); n++ {
 		binary_num := inputdata[n]
 		for dig := 0; dig < 12; dig++ {
@@ -30,7 +37,6 @@ func main() {
 			}
 		}
 	}
-	var g, e string
 	for n := 0; n < len(binarycounts); n++ {
 		if binarycounts[n] < 0 {
 			g += "0"
@@ -42,5 +48,10 @@ func main() {
 	}
 	gamma, _ := strconv.ParseInt(g, 2, 64)
 	epsilon, _ := strconv.ParseInt(e, 2, 64)
-	fmt.Println(gamma * epsilon)
+	return (gamma * epsilon)
+}
+
+func lifesupportrating(inputdata []string) int {
+	
+	return 1
 }
